@@ -26,7 +26,7 @@
     "test:watch": "npm run unit -- --watch --coverage-report=none --reporter=terse",
     "unit": "borp --reporter=test/test-reporter.mjs",
     "unit:report2": "tap --coverage-report=html --coverage-report=cobertura | tee out.tap",
-    "unit:report": "nyc --coverage-report=html --reporter=cobertura borp | tee out.tap",
+    "unit:report": "nyc --coverage-report=html --reporter=cobertura borp --reporter test/test-reporter.mjs",
     "citgm": "borp --concurrency=1"
   },
   "repository": {
