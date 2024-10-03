@@ -17,7 +17,7 @@
     "lint:fix": "eslint --fix",
     "lint:markdown": "markdownlint-cli2",
     "lint:eslint": "eslint",
-    "prepublishOnly": "cross-env PREPUBLISH=true borp && npm run test:validator:integrity",
+    "prepublishOnly": "cross-env PREPUBLISH=true borp --reporter ./test/test-reporter.mjs && npm run test:validator:integrity",
     "test": "npm run lint && npm run unit && npm run test:typescript",
     "test:ci": "npm run unit -- --coverage-report=lcovonly && npm run test:typescript",
     "test:report": "npm run lint && npm run unit:report && npm run test:typescript",
@@ -26,7 +26,7 @@
     "test:watch": "npm run unit -- --watch --coverage-report=none --reporter=terse",
     "unit": "borp --reporter=test/test-reporter.mjs",
     "unit:report": "nyc --coverage-report=html --reporter=cobertura borp --reporter test/test-reporter.mjs",
-    "citgm": "borp --concurrency=1"
+    "citgm": "borp --reporter ./test/test-reporter.mjs --concurrency=1"
   },
   "repository": {
     "type": "git",
