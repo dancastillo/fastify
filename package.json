@@ -11,8 +11,8 @@
     "benchmark:parser": "concurrently -k -s first \"node ./examples/benchmark/parser.js\" \"autocannon -c 100 -d 30 -p 10 -i ./examples/benchmark/body.json -H \"content-type:application/jsoff\" -m POST localhost:3000/\"",
     "build:validation": "node build/build-error-serializer.js && node build/build-validation.js",
     "coverage": "borp --reporter test/test-reporter.mjs --coverage --check-coverage --lines 100",
-    "coverage:ci": "nyc --coverage-report=html --coverage-report=lcov borp --reporter test/test-reporter.mjs ",
-    "coverage:ci-check-coverage": "borp --coverage --check-coverage --lines 100 --reporter ./test/test-reporter.mjs",
+    "coverage:ci": "nyc --coverage-report=html --coverage-report=lcov borp --reporter test/test-reporter.mjs",
+    "coverage:ci-check-coverage": "borp --reporter ./test/test-reporter.mjs --coverage --check-coverage --lines 100",
     "lint": "npm run lint:eslint",
     "lint:fix": "eslint --fix",
     "lint:markdown": "markdownlint-cli2",
@@ -25,7 +25,6 @@
     "test:typescript": "tsc test/types/import.ts --noEmit && tsd",
     "test:watch": "npm run unit -- --watch --coverage-report=none --reporter=terse",
     "unit": "borp --reporter=test/test-reporter.mjs",
-    "unit:report2": "tap --coverage-report=html --coverage-report=cobertura | tee out.tap",
     "unit:report": "nyc --coverage-report=html --reporter=cobertura borp --reporter test/test-reporter.mjs",
     "citgm": "borp --concurrency=1"
   },
