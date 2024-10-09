@@ -150,6 +150,7 @@
     }
   ],
   "devDependencies": {
+    "@dancastillo/testing-borp-with-fastify": "^0.17.6",
     "@fastify/pre-commit": "^2.1.0",
     "@sinclair/typebox": "^0.33.4",
     "@sinonjs/fake-timers": "^11.2.2",
@@ -162,7 +163,6 @@
     "ajv-i18n": "^4.2.0",
     "ajv-merge-patch": "^5.0.1",
     "autocannon": "^7.15.0",
-    "borp": "^0.17.0",
     "branch-comparer": "^1.1.0",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",

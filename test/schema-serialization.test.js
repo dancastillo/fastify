@@ -251,7 +251,7 @@ test('Different content types', t => {
       }
     }
   }, function (req, reply) {
-    switch (req.headers['code']) {
+    switch (req.headers.code) {
       case '200': {
         reply.header('Content-Type', 'application/json')
         reply.code(200).send({ age: 18, city: 'AU' })
